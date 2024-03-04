@@ -826,6 +826,7 @@ class Canvas(QtWidgets.QWidget):
             )
         self.current.close()
 
+        self.current.makeDiscrete()
         self.shapes.append(self.current)
         self.storeShapes()
         self.current = None

@@ -77,6 +77,11 @@ class Shape(object):
             # is used for drawing the pending line a different color.
             self.line_color = line_color
 
+    def makeDiscrete(self):
+        for p in self.points:
+            p.setX(int(p.x()) + 0.5)
+            p.setY(int(p.y()) + 0.5)
+
     def setShapeRefined(self, shape_type, points, point_labels, mask=None):
         self._shape_raw = (self.shape_type, self.points, self.point_labels)
         self.shape_type = shape_type
