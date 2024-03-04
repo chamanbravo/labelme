@@ -507,6 +507,7 @@ class Canvas(QtWidgets.QWidget):
         if self.movingShape and self.hShape:
             index = self.shapes.index(self.hShape)
             if self.shapesBackups[-1][index].points != self.shapes[index].points:
+                self.shapes[index].makeDiscrete()
                 self.storeShapes()
                 self.shapeMoved.emit()
 
